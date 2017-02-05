@@ -9,5 +9,6 @@ public class DesktopLauncher {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		new LwjglApplication(new FirstGameClass(), config);
 		//1st
+		//2nd
 	}
 }
