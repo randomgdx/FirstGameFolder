@@ -33,5 +33,5 @@ public class SplashScreen extends AbstractScreen {
         spriteBatch.end();
     }
 
-    //update
+
 }
