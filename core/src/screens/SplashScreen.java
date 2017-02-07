@@ -1,8 +1,9 @@
-package pl.firstgamepackage.pl.firstgamepackage.screens;
+package screens;
 
 import com.badlogic.gdx.graphics.Texture;
 
 import pl.firstgamepackage.FirstGameClass;
+
 
 /**
  * Created by NameD on 07.02.2017.
@@ -10,7 +11,7 @@ import pl.firstgamepackage.FirstGameClass;
 
 public class SplashScreen extends AbstractScreen {
 
-    private Texture splasahImg;
+    private Texture splashImg;
 
     public SplashScreen(FirstGameClass game) {
         super(game);
@@ -19,7 +20,7 @@ public class SplashScreen extends AbstractScreen {
 
     private void Init() {
         // TODO implement better assets loading when game grows
-        splasahImg = new Texture("badlogic.jpg");
+        splashImg = new Texture("badlogic.jpg");
 
     }
 
@@ -28,7 +29,9 @@ public class SplashScreen extends AbstractScreen {
         super.render(delta);
 
         spriteBatch.begin();
-        spriteBatch.draw(splasahImg, 0, 0);
+        spriteBatch.draw(splashImg, 0, 0);
         spriteBatch.end();
     }
+
+    //update
 }
