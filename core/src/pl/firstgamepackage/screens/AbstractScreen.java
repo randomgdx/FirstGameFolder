@@ -1,4 +1,4 @@
-package screens;
+package pl.firstgamepackage.screens;
 
 
 import com.badlogic.gdx.Gdx;

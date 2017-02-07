@@ -1,6 +1,7 @@
-package screens;
+package pl.firstgamepackage.screens;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.utils.Timer;
 
 import pl.firstgamepackage.FirstGameClass;
 
@@ -13,9 +14,19 @@ public class SplashScreen extends AbstractScreen {
 
     private Texture splashImg;
 
-    public SplashScreen(FirstGameClass game) {
+    public SplashScreen(final FirstGameClass game) {
         super(game);
         Init();
+
+        Timer.schedule(new Timer.Task() {
+            @Override
+            public void run() {
+
+                game.setScreen(new GameplayScreen(game));
+
+            }
+        },1);
+
     }
 
     private void Init() {

@@ -3,7 +3,7 @@ package pl.firstgamepackage;
 
 import com.badlogic.gdx.Game;
 
-import screens.SplashScreen;
+import pl.firstgamepackage.screens.SplashScreen;
 
 public class FirstGameClass extends Game {
 
