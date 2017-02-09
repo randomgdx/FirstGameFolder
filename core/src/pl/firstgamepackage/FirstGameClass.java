@@ -15,11 +15,22 @@ public class FirstGameClass extends Game {
 	private boolean paused;
 
 
+
+	private int points;
+
+
 	
 	@Override
 	public void create () {
 
 		this.setScreen(new SplashScreen(this));
+
+	}
+
+
+	public void addPoint(){
+
+		points++;
 
 	}
 
@@ -33,4 +44,9 @@ public class FirstGameClass extends Game {
 	public void setPaused(boolean paused) {
 		this.paused = paused;
 	}
+
+	public int getPoints() {
+		return points;
+	}
+
 }

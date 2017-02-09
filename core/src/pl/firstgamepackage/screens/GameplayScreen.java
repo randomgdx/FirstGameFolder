@@ -1,7 +1,10 @@
 package pl.firstgamepackage.screens;
 
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
 import pl.firstgamepackage.FirstGameClass;
@@ -15,6 +18,8 @@ public class GameplayScreen extends AbstractScreen {
 
     private Player player;
     private Button playerButton;
+    private Label scoreLabel;
+
 
     public GameplayScreen(FirstGameClass game) {
 
@@ -27,6 +32,18 @@ public class GameplayScreen extends AbstractScreen {
 
         initPlayer();
         initPlayerButton();
+        initScoreLabel();
+    }
+
+    private void initScoreLabel() {
+
+        LabelStyle labelStyle = new LabelStyle();
+        labelStyle.font = new BitmapFont();
+        scoreLabel = new Label("Test 123", labelStyle );
+        scoreLabel.setX(20);
+        scoreLabel.setY(650);
+        stage.addActor(scoreLabel);
+
     }
 
     private void initPlayerButton() {
@@ -46,6 +63,7 @@ public class GameplayScreen extends AbstractScreen {
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
 
               player.reactOnClick();
+                game.addPoint();
 
                 return super.touchDown(event, x, y, pointer, button);
             }
@@ -66,6 +84,7 @@ public class GameplayScreen extends AbstractScreen {
         super.render(delta);
         update();
 
+        //System.out.println("Points: " + game.getPoints());
         spriteBatch.begin();
         stage.draw();
         spriteBatch.end();
@@ -73,6 +92,7 @@ public class GameplayScreen extends AbstractScreen {
     }
 
     private void update() {
+        scoreLabel.setText("Score: " + game.getPoints());
         stage.act();
     }
 }
